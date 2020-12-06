@@ -1,0 +1,32 @@
+type Deposit @entity {
+ id: ID!
+ transactionHash: Bytes!
+ amount: BigDecimal!
+ spender: Bytes!
+}
+
+type Withdrawal @entity {
+ id: ID!
+ transactionHash: Bytes!
+ amount: BigDecimal!
+ owner: Bytes!
+}
+
+type User @entity {
+ id: ID!
+ address: Bytes!
+ deposits: BigDecimal!
+ withdrawals: BigDecimal!
+ balance: BigDecimal!
+}
+
+type Aggregate @entity {
+ id: ID!
+ totalDeposits: BigInt!
+ totalDepositors: BigInt!
+ totalDepositAmount: BigDecimal!
+ totalWithdrawals: BigInt!
+ totalRemovers: BigInt!
+ totalWithdrawalAmount: BigDecimal!
+ timestamp: BigInt!
+}
